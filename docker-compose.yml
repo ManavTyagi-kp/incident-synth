@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes: ["./models:/root/.ollama"]
+    ports: ["11434:11434"]
+  api:
+    build: ./backend
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_REPO=${GITHUB_REPO}
+    depends_on: [ollama]
+    ports: ["8000:8000"]
+  dashboard:
+    build: ./dashboard
+    environment: ["API_URL=http://api:8000"]
+    depends_on: [api]
+    ports: ["8501:8501"]
