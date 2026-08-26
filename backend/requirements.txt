@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic
+requests
+PyGithub
+python-dotenv
+google-genai
+google-cloud-storage
