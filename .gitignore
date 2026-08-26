@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 models/*.gguf
 data/*.jsonl
+.pdf
+Hackathon Team1-a Playbook.pdf
+training-related/incident_synth_team1(a).ipynb
+training-related/incident_synth_team1(a).py
+models/drive-download-20260821T095826Z-1-001.zip
